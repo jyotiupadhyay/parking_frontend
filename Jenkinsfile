@@ -3,7 +3,7 @@ pipeline {
         stages{
             stage('Git Checkout'){
                 steps{
-                    git 'https://github.com/Anjuna661/parking_frontend.git'
+                    git 'https://github.com/jyotiupadhyay/parking_frontend.git'
                 }
             }
             stage('Build') {
@@ -16,7 +16,7 @@ pipeline {
             stage('Deploy'){
                 steps{
                     sh 'cp -r $WORKSPACE/build /var/workspace'
-                    sh 'curl -u admin:admin http://3.17.179.154:8888/manager/reload?path=/build'
+                    sh 'curl -u admin:admin http://18.224.228.169:8080/manager/reload?path=/build'
                 }
             }
             }
